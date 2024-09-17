@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarath Manamendra - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Sarath Manamendra</h1>
+        <p>Leader of the Nawa Sihala Urumaya (New Sinhala Heritage Party)</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Sarath Manamendra.jpeg" alt="Sarath Manamendra" class="candi-img">
+            <img src="img/Symbol/Sarath Manamendra.png" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Sarath Manamendra</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Buddhism</li>
+                <li><strong>Education:</strong> Information not publicly available</li>
+                <li><strong>Profession:</strong> Politician, Businessman</li>
+                <li><strong>Political Status:</strong> Leader of the Nawa Sihala Urumaya (New Sinhala Heritage Party)</li>
+                <li><strong>Residency:</strong> Colombo, Sri Lanka</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Party:</strong> Sarath Manamendra leads the Nawa Sihala Urumaya (New Sinhala Heritage Party), which emphasizes the protection and promotion of Sinhala Buddhist identity in Sri Lanka.</li>
+                <li><strong>Political Involvement:</strong> Manamendra is known for his strong nationalist stance, focusing on safeguarding Sinhala Buddhist values and opposing foreign influences and federalism.</li>
+                <li><strong>Leader of Nawa Sihala Urumaya:</strong> His leadership involves advocating policies that prioritize Sinhala culture and Buddhism in governance and society.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Political Ideology</h2>
+            <ul>
+                <li><strong>Nationalism:</strong> Manamendra advocates for preserving Sinhala Buddhist culture and opposing external influences.</li>
+                <li><strong>Opposition to Federalism:</strong> Critical of federalism, viewing it as a threat to Sri Lanka’s unitary state.</li>
+                <li><strong>Promotion of Buddhism:</strong> Supports policies that emphasize Buddhism as the primary religion of Sri Lanka.</li>
+                <li><strong>Economic Policies:</strong> Advocates for reducing foreign dependency and supporting local industries.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Notable Political Contributions and Initiatives</h2>
+            <ul>
+                <li><strong>Advocacy for Sinhala Buddhist Rights:</strong> Involved in protecting Sinhala Buddhist interests and preserving cultural and religious heritage.</li>
+                <li><strong>Opposition to Minority Rights Movements:</strong> Critical of certain minority rights movements, aligning with other nationalist politicians.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> While not a major contender nationally, Manamendra is expected to continue advocating for his party’s nationalist platform.</li>
+                <li><strong>Election Symbol:</strong> The 'Conch Shell' (Hakgediya), symbolizing purity and a call to action for Sinhala unity.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Controversies & Criticisms</h2>
+            <ul>
+                <li><strong>Accusations of Extremism:</strong> Criticized for promoting extremism and division through strong Sinhala Buddhist nationalism.</li>
+                <li><strong>Limited Electoral Success:</strong> Despite leadership, his party has struggled to gain significant national traction outside a niche nationalist base.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information about his family life is not publicly available.</li>
+                <li><strong>Political Influence:</strong> Remains a prominent figure in nationalist circles, though his influence is confined to specific ideological segments.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Often seen in traditional Sri Lankan attire, symbolizing his commitment to cultural preservation.</li>
+                <li><strong>Election Symbol:</strong> The conch shell (Hakgediya), representing a call for Sinhala unity and defense of heritage.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> Orange and White, symbolizing Sinhala nationalism and Buddhism, representing purity and heritage.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

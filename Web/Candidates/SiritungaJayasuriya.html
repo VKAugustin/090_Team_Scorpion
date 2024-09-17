@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siritunga Jayasuriya - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Siritunga Jayasuriya</h1>
+        <p>Presidential Candidate, United Socialist Party</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Sri Lanka" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Siritunga_Jayasuriya_1.jpg" alt="Siritunga Jayasuriya" class="candi-img">
+            <img src="img/Symbol/sirithuga jaya.png" alt="Tri-shaw Symbol" class="candi-img">
+            
+            <ul>
+                <li><strong>Full Name:</strong> Siritunga Jayasuriya</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Political Party:</strong> United Socialist Party (USP)</li>
+                <li><strong>Political Symbol:</strong> Tri-shaw</li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> Siritunga Jayasuriya is a prominent Sri Lankan politician and activist. He has participated in multiple presidential elections since 2005, advocating for leftist and socialist ideologies.</li>
+                <li><strong>Policy Platform:</strong> His platform includes economic equality, social justice, nationalization of key industries, and advocacy for socialist and anti-imperialist movements.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Economic Policies:</strong> Advocates for wealth redistribution, nationalization of key industries, and increased state intervention to protect workers' rights.</li>
+                <li><strong>Social Policies:</strong> Supports improving public welfare, healthcare, and education, emphasizing progressive taxation.</li>
+                <li><strong>Foreign Policy:</strong> Focuses on maintaining neutrality, non-alignment, and supporting socialist and anti-imperialist movements.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Leadership:</strong> Leader of the United Socialist Party and a vocal advocate for workers' rights and social justice in Sri Lanka.</li>
+                <li><strong>Activism:</strong> Known for his consistent stance on socialist ideals and efforts to address social inequalities.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Controversies & Criticisms</h2>
+            <ul>
+                <li><strong>Feasibility of Policies:</strong> Faces challenges in implementing his socialist policies due to potential resistance and economic constraints.</li>
+                <li><strong>Limited Resources:</strong> His political campaigns often face limited financial support compared to major political factions.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Expected to continue advocating for socialist change, emphasizing a focus on addressing economic and social inequalities.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Public Image and Symbolism</h2>
+            <ul>
+                <li><strong>Public Engagement:</strong> Actively involved in public engagements, known for his strong stance on socialist policies and leadership within the United Socialist Party.</li>
+                <li><strong>Symbol:</strong> Uses the Tri-shaw as his election symbol, representing grassroots and working-class support.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilith Jayaweera - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Dilith Jayaweera</h1>
+        <p>Presidential Candidate - Sri Lanka 2024</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Dilith_Jayaweera.JPG" alt="Dilith Jayaweera" class="candi-img">
+            <img src="img/Symbol/Dilith Jayaweera.png" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Dilith Susantha Jayaweera</li>
+                <li><strong>Date of Birth:</strong> 18 September 1967</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Likely Buddhist (based on cultural background)</li>
+                <li><strong>Ethnicity:</strong> Sinhala</li>
+                <li><strong>Education:</strong> St. Aloysius' College, University of Colombo, Sri Lanka Law College, MBA from the University of Wales</li>
+                <li><strong>Profession:</strong> Businessman, Media Mogul, Politician</li>
+                <li><strong>Political Status:</strong> Presidential Candidate</li>
+                <li><strong>Residency:</strong> Information not publicly available</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> Dilith Jayaweera is a prominent figure in Sri Lankan politics, representing the Communist Party of Sri Lanka and the Mawbima Janatha Pakshaya. His candidacy for the 2024 Presidential Election is backed by the Sarvajana Balaya.</li>
+                <li><strong>Political Platform:</strong> His platform emphasizes socialist principles, including nationalization of key industries, equitable wealth distribution, and extensive state intervention in the economy. He also focuses on improving access to healthcare, education, and social welfare.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Economic Policies:</strong> Advocates for the nationalization of key industries, fair wages, and industrial development. Supports increased social safety nets and state intervention in the economy.</li>
+                <li><strong>Social Policies:</strong> Promotes progressive reforms for healthcare, education, and social welfare to reduce poverty and ensure equal opportunities.</li>
+                <li><strong>Foreign Policy:</strong> Aims to strengthen relationships with socialist nations, advocate for non-alignment, and support international solidarity with anti-imperialist movements.</li>
+                <li><strong>Environmental Policy:</strong> Focuses on sustainable development, combating climate change, and promoting green technologies and environmental justice.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Community Engagement:</strong> Launched the election manifesto on 31 August 2024, and has been actively involved in grassroots movements and social issues.</li>
+                <li><strong>Leadership:</strong> Known for his strong commitment to socialist and communist principles, advocating for social justice and economic equality.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Controversies & Criticisms</h2>
+            <ul>
+                <li><strong>Political Challenges:</strong> Faces challenges related to the implementation of socialist policies and resistance from other political factions. His focus on socialist reforms may face scrutiny in the current economic and political framework.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Jayaweera is running as a presidential candidate with a clear socialist agenda. His prospects will depend on his ability to mobilize support and address socio-economic challenges effectively.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Married to Nelum; grew up in Galle with three brothers. His father was an Additional Registrar of Lands and his mother was a school principal.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Often seen in traditional or formal attire, reflecting his role as a prominent public figure and his commitment to his ideological principles.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> The campaign uses the star symbol, representing guidance, vision, and high ideals.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

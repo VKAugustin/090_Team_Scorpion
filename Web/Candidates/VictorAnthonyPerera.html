@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Anthony Perera - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Victor Anthony Perera</h1>
+        <p>Independent Politician</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Victor Anthony Perera.jpg" alt="Victor Anthony Perera" class="candi-img">
+            <img src="img/Symbol/Victor Anthony Perera.jpg" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Victor Anthony Perera</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Christianity (likely Roman Catholic)</li>
+                <li><strong>Ethnicity:</strong> Sinhala</li>
+                <li><strong>Education:</strong> Information not publicly available</li>
+                <li><strong>Profession:</strong> Politician, Public Servant</li>
+                <li><strong>Political Status:</strong> Independent politician (formerly associated with regional political movements)</li>
+                <li><strong>Residency:</strong> Colombo, Sri Lanka</li>
+                <!-- No specific candidate symbol available -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> Victor Anthony Perera is known for his work at the local and regional levels. His focus has been on public service and grassroots politics.</li>
+                <li><strong>Political Platform:</strong> Perera’s platform emphasizes improving local infrastructure, public services, and addressing issues related to the working class.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Public Services Improvement:</strong> Advocates for better healthcare, education, and housing, particularly in rural and semi-urban areas.</li>
+                <li><strong>Infrastructure Development:</strong> Focuses on enhancing roads, sanitation, and transportation in underserved regions.</li>
+                <li><strong>Community Development:</strong> Supports policies that promote local economic growth, employment opportunities, and welfare for lower-income families.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Local Government Involvement:</strong> Contributed to community development projects and advocated for improved public services.</li>
+                <li><strong>Advocacy for the Working Class:</strong> Raised issues related to labor rights, fair wages, and better working conditions.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Controversies and Criticisms</h2>
+            <ul>
+                <li><strong>Limited National Influence:</strong> His impact on the national stage is limited; criticisms include the inability to elevate his platform nationally.</li>
+                <li><strong>Political Alignment:</strong> As an independent politician with occasional regional alignments, he faces criticism for lacking broader influence or backing.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Expected to continue influencing local or regional politics with a focus on public services and infrastructure improvement.</li>
+                <!-- No specific election symbol available -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal and Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information regarding his family life is not publicly available.</li>
+                <li><strong>Political Influence:</strong> Known for a close connection with local communities and public service.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Typically seen in formal or semi-formal attire, reflecting his role as a public servant and politician.</li>
+                <!-- No specific campaign colors or symbols available -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> No specific campaign colors are associated with Victor Anthony Perera due to his local-level political focus.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

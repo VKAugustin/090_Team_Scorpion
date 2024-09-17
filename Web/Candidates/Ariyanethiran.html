@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P. Ariyanethiran - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>P. Ariyanethiran</h1>
+        <p>Tamil Politician and Presidential Candidate</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/ariyethiran.jpg" alt="P. Ariyanethiran" class="candi-img">
+            <img src="img/Symbol/P.Ariyanethiran.png" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Pakkiyaselvam Ariyanethiran</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Information not publicly available</li>
+                <li><strong>Ethnicity:</strong> Tamil</li>
+                <li><strong>Education:</strong> Information not publicly available</li>
+                <li><strong>Profession:</strong> Politician</li>
+                <li><strong>Political Status:</strong> Presidential Candidate, supported by Tamil political coalitions (ITAK, EPRLF)</li>
+                <li><strong>Residency:</strong> Information not publicly available</li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> P. Ariyanethiran is a seasoned Tamil politician and a former Member of Parliament representing the Batticaloa District. He has been actively involved in Tamil political movements, particularly through the Tamil National Alliance (TNA), advocating for the rights of the Tamil minority.</li>
+                <li><strong>Political Platform:</strong> His campaign centers on Tamil autonomy, self-determination, and human rights, particularly in the post-war Northern and Eastern provinces of Sri Lanka.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Tamil Autonomy and Self-Determination:</strong> Ariyanethiran advocates for a federalist model where Tamil-majority regions have greater autonomy. He supports a referendum for self-governance under international supervision.</li>
+                <li><strong>Land Rights:</strong> He calls for resolving land disputes in the Tamil regions, particularly regarding lands occupied by the military since the end of the civil war in 2009.</li>
+                <li><strong>Human Rights and Accountability:</strong> Ariyanethiran seeks justice for Tamil victims of war crimes and human rights violations, advocating for international accountability mechanisms.</li>
+                <li><strong>Federalism:</strong> He supports decentralized governance, pushing for more local control over education, law enforcement, and resource management in Tamil provinces.</li>
+                <li><strong>Economic Development:</strong> His platform emphasizes rebuilding infrastructure and promoting economic development in war-affected Tamil regions, with a focus on providing opportunities for the youth.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Parliamentary Representation:</strong> Ariyanethiran served as a Member of Parliament for the Batticaloa District, representing Tamil interests and advocating for the rights of his community at the national level.</li>
+                <li><strong>Advocacy for Tamil Rights:</strong> He has been a consistent voice for Tamil self-determination and human rights, particularly in the Northern and Eastern provinces of Sri Lanka.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Challenges & Criticisms</h2>
+            <ul>
+                <li><strong>National Reach:</strong> Ariyanethiran's candidacy is primarily focused on Tamil issues, which may limit his appeal to voters outside the Northern and Eastern provinces.</li>
+                <li><strong>Limited Electoral Influence:</strong> Tamil parties have historically struggled to exert significant influence in national elections, given the dominance of Sinhalese-majority parties and demographic challenges.</li>
+                <li><strong>Symbolic Candidacy:</strong> Some analysts view his campaign as more symbolic, aimed at raising awareness of Tamil grievances rather than securing a realistic path to the presidency.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> P. Ariyanethiran’s candidacy is a significant step toward ensuring that Tamil political aspirations are part of the national dialogue, though his chances of winning the presidency remain slim.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information about his personal and family life is not widely available.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> P. Ariyanethiran’s campaign symbol is the Conch Shell, a powerful cultural and spiritual symbol in South Asia that represents purity, truth, and justice. It resonates with his advocacy for Tamil rights and justice.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> The Conch Shell symbol holds significant meaning, emphasizing clarity, protection, and a call for justice, aligning with Ariyanethiran’s demands for Tamil autonomy and human rights.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

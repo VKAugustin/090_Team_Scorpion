@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidney Jayarathna - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Sidney Jayarathna</h1>
+        <p>Politician</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Sidney Jayarathna.jpeg" alt="Sidney Jayarathna" class="candi-img">
+            <img src="img/Symbol/Sidney Jayarathna.png" alt="compass" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Sidney Jayarathna</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Likely Buddhism (based on cultural background)</li>
+                <li><strong>Ethnicity:</strong> Sinhala</li>
+                <li><strong>Education:</strong> Information not publicly available</li>
+                <li><strong>Profession:</strong> Politician</li>
+                <li><strong>Residency:</strong> Information not publicly available</li>
+            </ul>
+            
+        </section>
+
+        <section>
+            <h2>Political Status</h2>
+            <ul>
+                <li><strong>Current Position:</strong> Local Government Authority / Member of Parliament</li>
+                <li><strong>Political Party:</strong> Sri Lanka Podujana Peramuna (SLPP)</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li>Involved in local or national politics, potentially serving in a local government authority or as a Member of Parliament.</li>
+                <li>Affiliated with the SLPP, reflecting alignment with the party's nationalist and pro-Buddhist stance.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Constituency Development:</strong> Addresses needs of his constituents, advocating for local infrastructure improvements, educational and healthcare services, and economic development.</li>
+                <li><strong>Economic Development:</strong> Supports policies to boost local economic opportunities, including promoting small businesses, attracting investments, and enhancing local industries.</li>
+                <li><strong>Social Welfare:</strong> Involved in social welfare initiatives, aiming to improve public services, healthcare, and education for his constituency.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Local Development Projects:</strong> Involved in various local development projects focusing on improving infrastructure and public services.</li>
+                <li><strong>Legislative Contributions:</strong> If serving as a Member of Parliament, contributes to legislative discussions and national policy-making.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Controversies & Criticisms</h2>
+            <ul>
+                <li><strong>Party Affiliation Criticism:</strong> May face criticism related to SLPP’s broader political agenda, particularly its nationalist and pro-Buddhist positions.</li>
+                <li><strong>Local Issues:</strong> Potential local controversies or criticisms related to development projects or constituency management.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Expected to continue his political role and seek re-election if serving as a Member of Parliament, emphasizing his record on local issues, economic development, and alignment with SLPP’s agenda.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information about personal and family life is not widely available.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Often seen in formal attire appropriate for parliamentary and public functions.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> As a member of the SLPP, campaign colors are likely to align with the party's branding, typically involving dark red (maroon), symbolizing nationalism and cultural values.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

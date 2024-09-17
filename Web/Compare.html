@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Style/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+/* Navigation bar styling */
+.navbar {
+    background-color: #000000;
+    overflow: hidden;
+    padding: 20px;
+    
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            color: #002753;
+        }
+
+        .comparison-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .candidate-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .candidate-box:hover {
+            transform: scale(1.05);
+        }
+
+        select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .profile-box {
+            min-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .profile-box p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .candidate-box {
+                width: 100%;
+            }
+
+            .navbar a {
+                float: none;
+                text-align: left;
+                padding: 10px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">Compare Candidates</a>
+    </div>
+
+    <h1>Compare Candidates</h1>
+    
+    <div class="comparison-container">
+        <div class="candidate-box">
+            <select id="candidate1" onchange="loadProfile('candidate1', 'profile1')">
+                <option value="">Select Candidate</option>
+                <option value="Candidates/raw/anura.html">Anura Kumara Dissanayake</option>
+                <option value="Candidates/raw/Ranil.html">Ranil Wickremesinghe</option>
+                <option value="Candidates/raw/sajith.html">Sajith Premadasa</option>
+                <option value="Candidates/raw/namal.html">Namal Rajapaksa</option>
+                <option value="Candidates/raw/sarathfonseka.html">Sarath Fonseka</option>
+                <option value="Candidates/raw/Wijeyadasa Rajapakshe.html">Wijeyadasa Rajapakshe</option>
+                <option value="Candidates/raw/AbubakarMohamedInfaz.html">Abubakar Mohamed Infaz</option>
+                <option value="Candidates/raw/AjanthadeZoyza.html">Ajantha de Zoyza</option>
+                <option value="Candidates/raw/Akmeemana_Dayarathana_Thero.html">Akmeemana Dayarathana Thero</option>
+                <option value="Candidates/raw/AnandaKularatne.html">K. Ananda Kularatne</option>
+                <option value="Candidates/raw/Ariyanethiran.html">Pakkiya Selvam Ariyanethiran</option>
+                <option value="Candidates/raw/ASP_Liyanage.html">ASP Liyanage</option>
+                <option value="Candidates/raw/BattaramulleSeelarathanaThero.html">Battaramulle Seelarathana Thero</option>
+                <option value="Candidates/raw/Chaminda_anuruddha.html">Chaminda Anuruddha</option>
+                <option value="Candidates/raw/DilithJayaweera.html">Dilith Jayaweera</option>
+                <option value="Candidates/raw/D_M_Bandaranaike.html">D. M. Bandaranaike</option>
+                <option value="Candidates/raw/JanakaRatnayake.html">Janaka Ratnayake</option>
+                <option value="Candidates/raw/KeerthiWickremeratne.html">Keerthi Wickremeratne</option>
+                <option value="Candidates/raw/KK_piyadasa.html">K.K. Piyadasa</option>
+                <option value="Candidates/raw/KR_Kishan.html">KR Kishan</option>
+                <option value="Candidates/raw/LalithdeSilva.html">Lalith de Silva</option>
+                <option value="Candidates/raw/Mahinda_Dewage.html">Mahinda Dewage</option>
+                <option value="Candidates/raw/MM_Premasiri.html">Marakkalamanage Premasiri</option>
+                <option value="Candidates/raw/MohamedIlliyas.html">Mohamed Ilyaz</option>
+                <option value="Candidates/raw/Nuwan_Bopage.html">Nuwan Bopage</option>
+                <option value="Candidates/raw/OshalaHerath.html">Oshala Herath</option>
+                <option value="Candidates/raw/PaniWijesiriwardena.html">Pani Wijesiriwardena</option>
+                <option value="Candidates/raw/PriyanthaWickremesinghe.html">Priyantha Wickremesinghe</option>
+                <option value="Candidates/raw/PWSK_Bandaranayake.html">PWSK Bandaranayake</option>
+                <option value="Candidates/raw/RoshanRanasinghe.html">Roshan Ranasinghe</option>
+                <option value="Candidates/raw/SarathKeerthirathne.html">Sarath Keerthirathne</option>
+                <option value="Candidates/raw/sarathManamendra.html">Sarath Manamendra</option>
+                <option value="Candidates/raw/SidneyJayarathna.html">Anura Sidney Jayarathne</option>
+                <option value="Candidates/raw/SiripalaAmarasinghe.html">Siripala Amarasinghe</option>
+                <option value="Candidates/raw/SiritungaJayasuriya.html">Siritunga Jayasuriya</option>
+                <option value="Candidates/raw/SuranjeewaAnojdeSilva.html">Suranjeewa Anoj de Silva</option>
+                <option value="Candidates/raw/Thilakarajah.html">Thilakarajah</option>
+                <option value="Candidates/raw/VictorAnthonyPerera.html">Victor Anthony Perera</option>
+
+            </select>
+            <div id="profile1" class="profile-box">Candidate 1 Profile</div>
+        </div>
+
+        <div class="candidate-box">
+            <select id="candidate2" onchange="loadProfile('candidate2', 'profile2')">
+                <option value="">Select Candidate</option>
+                <option value="Candidates/raw/anura.html">Anura Kumara Dissanayake</option>
+                <option value="Candidates/raw/Ranil.html">Ranil Wickremesinghe</option>
+                <option value="Candidates/raw/sajith.html">Sajith Premadasa</option>
+                <option value="Candidates/raw/namal.html">Namal Rajapaksa</option>
+                <option value="Candidates/raw/sarathfonseka.html">Sarath Fonseka</option>
+                <option value="Candidates/raw/Wijeyadasa Rajapakshe.html">Wijeyadasa Rajapakshe</option>
+                <option value="Candidates/raw/AbubakarMohamedInfaz.html">Abubakar Mohamed Infaz</option>
+                <option value="Candidates/raw/AjanthadeZoyza.html">Ajantha de Zoyza</option>
+                <option value="Candidates/raw/Akmeemana_Dayarathana_Thero.html">Akmeemana Dayarathana Thero</option>
+                <option value="Candidates/raw/AnandaKularatne.html">K. Ananda Kularatne</option>
+                <option value="Candidates/raw/Ariyanethiran.html">Pakkiya Selvam Ariyanethiran</option>
+                <option value="Candidates/raw/ASP_Liyanage.html">ASP Liyanage</option>
+                <option value="Candidates/raw/BattaramulleSeelarathanaThero.html">Battaramulle Seelarathana Thero</option>
+                <option value="Candidates/raw/Chaminda_anuruddha.html">Chaminda Anuruddha</option>
+                <option value="Candidates/raw/DilithJayaweera.html">Dilith Jayaweera</option>
+                <option value="Candidates/raw/D_M_Bandaranaike.html">D. M. Bandaranaike</option>
+                <option value="Candidates/raw/JanakaRatnayake.html">Janaka Ratnayake</option>
+                <option value="Candidates/raw/KeerthiWickremeratne.html">Keerthi Wickremeratne</option>
+                <option value="Candidates/raw/KK_piyadasa.html">K.K. Piyadasa</option>
+                <option value="Candidates/raw/KR_Kishan.html">KR Kishan</option>
+                <option value="Candidates/raw/LalithdeSilva.html">Lalith de Silva</option>
+                <option value="Candidates/raw/Mahinda_Dewage.html">Mahinda Dewage</option>
+                <option value="Candidates/raw/MM_Premasiri.html">Marakkalamanage Premasiri</option>
+                <option value="Candidates/raw/MohamedIlliyas.html">Mohamed Ilyaz</option>
+                <option value="Candidates/raw/Nuwan_Bopage.html">Nuwan Bopage</option>
+                <option value="Candidates/raw/OshalaHerath.html">Oshala Herath</option>
+                <option value="Candidates/raw/PaniWijesiriwardena.html">Pani Wijesiriwardena</option>
+                <option value="Candidates/raw/PriyanthaWickremesinghe.html">Priyantha Wickremesinghe</option>
+                <option value="Candidates/raw/PWSK_Bandaranayake.html">PWSK Bandaranayake</option>
+                <option value="Candidates/raw/RoshanRanasinghe.html">Roshan Ranasinghe</option>
+                <option value="Candidates/raw/SarathKeerthirathne.html">Sarath Keerthirathne</option>
+                <option value="Candidates/raw/sarathManamendra.html">Sarath Manamendra</option>
+                <option value="Candidates/raw/SidneyJayarathna.html">Anura Sidney Jayarathne</option>
+                <option value="Candidates/raw/SiripalaAmarasinghe.html">Siripala Amarasinghe</option>
+                <option value="Candidates/raw/SiritungaJayasuriya.html">Siritunga Jayasuriya</option>
+                <option value="Candidates/raw/SuranjeewaAnojdeSilva.html">Suranjeewa Anoj de Silva</option>
+                <option value="Candidates/raw/Thilakarajah.html">Thilakarajah</option>
+                <option value="Candidates/raw/VictorAnthonyPerera.html">Victor Anthony Perera</option>
+            </select>
+            <div id="profile2" class="profile-box">Candidate 2 Profile</div>
+        </div>
+
+        <div class="candidate-box">
+            <select id="candidate3" onchange="loadProfile('candidate3', 'profile3')">
+                <option value="">Select Candidate</option>
+                <option value="Candidates/raw/anura.html">Anura Kumara Dissanayake</option>
+                <option value="Candidates/raw/Ranil.html">Ranil Wickremesinghe</option>
+                <option value="Candidates/raw/sajith.html">Sajith Premadasa</option>
+                <option value="Candidates/raw/namal.html">Namal Rajapaksa</option>
+                <option value="Candidates/raw/sarathfonseka.html">Sarath Fonseka</option>
+                <option value="Candidates/raw/Wijeyadasa Rajapakshe.html">Wijeyadasa Rajapakshe</option>
+                <option value="Candidates/raw/AbubakarMohamedInfaz.html">Abubakar Mohamed Infaz</option>
+                <option value="Candidates/raw/AjanthadeZoyza.html">Ajantha de Zoyza</option>
+                <option value="Candidates/raw/Akmeemana_Dayarathana_Thero.html">Akmeemana Dayarathana Thero</option>
+                <option value="Candidates/raw/AnandaKularatne.html">K. Ananda Kularatne</option>
+                <option value="Candidates/raw/Ariyanethiran.html">Pakkiya Selvam Ariyanethiran</option>
+                <option value="Candidates/raw/ASP_Liyanage.html">ASP Liyanage</option>
+                <option value="Candidates/raw/BattaramulleSeelarathanaThero.html">Battaramulle Seelarathana Thero</option>
+                <option value="Candidates/raw/Chaminda_anuruddha.html">Chaminda Anuruddha</option>
+                <option value="Candidates/raw/DilithJayaweera.html">Dilith Jayaweera</option>
+                <option value="Candidates/raw/D_M_Bandaranaike.html">D. M. Bandaranaike</option>
+                <option value="Candidates/raw/JanakaRatnayake.html">Janaka Ratnayake</option>
+                <option value="Candidates/raw/KeerthiWickremeratne.html">Keerthi Wickremeratne</option>
+                <option value="Candidates/raw/KK_piyadasa.html">K.K. Piyadasa</option>
+                <option value="Candidates/raw/KR_Kishan.html">KR Kishan</option>
+                <option value="Candidates/raw/LalithdeSilva.html">Lalith de Silva</option>
+                <option value="Candidates/raw/Mahinda_Dewage.html">Mahinda Dewage</option>
+                <option value="Candidates/raw/MM_Premasiri.html">Marakkalamanage Premasiri</option>
+                <option value="Candidates/raw/MohamedIlliyas.html">Mohamed Ilyaz</option>
+                <option value="Candidates/raw/Nuwan_Bopage.html">Nuwan Bopage</option>
+                <option value="Candidates/raw/OshalaHerath.html">Oshala Herath</option>
+                <option value="Candidates/raw/PaniWijesiriwardena.html">Pani Wijesiriwardena</option>
+                <option value="Candidates/raw/PriyanthaWickremesinghe.html">Priyantha Wickremesinghe</option>
+                <option value="Candidates/raw/PWSK_Bandaranayake.html">PWSK Bandaranayake</option>
+                <option value="Candidates/raw/RoshanRanasinghe.html">Roshan Ranasinghe</option>
+                <option value="Candidates/raw/SarathKeerthirathne.html">Sarath Keerthirathne</option>
+                <option value="Candidates/raw/sarathManamendra.html">Sarath Manamendra</option>
+                <option value="Candidates/raw/SidneyJayarathna.html">Anura Sidney Jayarathne</option>
+                <option value="Candidates/raw/SiripalaAmarasinghe.html">Siripala Amarasinghe</option>
+                <option value="Candidates/raw/SiritungaJayasuriya.html">Siritunga Jayasuriya</option>
+                <option value="Candidates/raw/SuranjeewaAnojdeSilva.html">Suranjeewa Anoj de Silva</option>
+                <option value="Candidates/raw/Thilakarajah.html">Thilakarajah</option>
+                <option value="Candidates/raw/VictorAnthonyPerera.html">Victor Anthony Perera</option>
+            </select>
+            <div id="profile3" class="profile-box">Candidate 3 Profile</div>
+        </div>
+    </div>
+
+    <script>
+        function loadProfile(selectId, profileId) {
+            var selectedCandidate = document.getElementById(selectId).value;
+            console.log("Selected Candidate Path:", selectedCandidate); 
+
+            if (selectedCandidate) {
+                fetch(selectedCandidate)
+                    .then(response => {
+                        console.log("Fetch response status:", response.status); 
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok: ' + response.status);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        console.log("Fetched data successfully");
+                        document.getElementById(profileId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        document.getElementById(profileId).innerHTML = "<p style='color: red;'>Error loading profile: " + error.message + "</p>";
+                        console.error('Error:', error);
+                    });
+            } else {
+                document.getElementById(profileId).innerHTML = "Select a candidate to view the profile.";
+            }
+        }
+    </script>
+ <!-- Chat Button and Popup -->
+ <button id="chat-button">🦂</button>
+
+ <div id="chat-popup">
+     <span id="close-chat">&times;</span>
+     <!-- Load the chatbot UI in an iframe -->
+     <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+ </div>
+
+ <div id="small-popup">
+     <p>Try our Scorpion AI!</p>
+ </div>
+
+ <script>
+     const chatButton = document.getElementById('chat-button');
+     const chatPopup = document.getElementById('chat-popup');
+     const closeChat = document.getElementById('close-chat');
+     const smallPopup = document.getElementById('small-popup');
+ 
+     // Show small popup message on page load
+     window.onload = () => {
+         smallPopup.style.display = 'block'; // Show small popup
+         setTimeout(() => {
+             smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+         }, 3000);
+ 
+         // Stop the button animation after 5 seconds
+         setTimeout(() => {
+             chatButton.style.animation = 'none'; // Disable animation
+         }, 5000);
+     };
+ 
+     // Toggle chat popup visibility when the chat button is clicked
+     chatButton.addEventListener('click', () => {
+         if (chatPopup.style.display === 'flex') {
+             chatPopup.style.display = 'none'; // Hide chat popup if it's open
+         } else {
+             chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+         }
+     });
+ 
+     // Close the chat popup when the close button (X) is clicked
+     closeChat.addEventListener('click', () => {
+         chatPopup.style.display = 'none';
+     });
+ </script>
+</body>
+</html>

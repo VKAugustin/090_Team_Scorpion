@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaminda Anuruddha - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Chaminda Anuruddha</h1>
+        <p>Independent Presidential Candidate</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Chaminda Anuruddha.jpg" alt="Chaminda Anuruddha" class="candi-img">
+            <img src="img/Symbol/Chaminda Anuraddaa.png" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Chaminda Anuruddha</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Information not publicly available</li>
+                <li><strong>Ethnicity:</strong> Information not publicly available</li>
+                <li><strong>Education:</strong> Information not publicly available</li>
+                <li><strong>Profession:</strong> Independent Politician</li>
+                <li><strong>Political Status:</strong> Independent Presidential Candidate</li>
+                <li><strong>Residency:</strong> Information not publicly available</li>
+                <img src="img/Symbol/horseshoe.jpg" alt="candidate symbol" class="candi-img">
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> Chaminda Anuruddha is an independent candidate running for the 2024 Sri Lankan Presidential Election. His campaign focuses on addressing local concerns, and he brings a grassroots approach to governance.</li>
+                <li><strong>Political Platform:</strong> He advocates for transparency, anti-corruption, economic reform, and social justice, aiming to provide an alternative to mainstream political parties.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Anti-Corruption:</strong> Promotes government transparency and accountability, seeking to address corruption at all levels of governance.</li>
+                <li><strong>Economic Reform:</strong> Focuses on addressing economic inequalities, particularly at the grassroots level, aiming for economic development and opportunities for all citizens.</li>
+                <li><strong>Social Justice:</strong> Advocates for equal access to opportunities and resources, emphasizing inclusivity and social welfare initiatives.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Independent Representation:</strong> Chaminda Anuruddha’s campaign stands out due to his independent status, which provides a fresh, unaligned perspective on governance.</li>
+                <li><strong>Advocacy for Marginalized Communities:</strong> His platform includes a strong focus on social justice and advocacy for those who are economically disadvantaged.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Challenges & Criticisms</h2>
+            <ul>
+                <li><strong>Campaign Challenges:</strong> Chaminda faces tough competition from well-established candidates with larger political machinery, such as Ranil Wickremesinghe and Sajith Premadasa.</li>
+                <li><strong>Lack of Major Party Support:</strong> As an independent candidate, he does not have the backing of a major party, which may limit his reach and resources compared to more mainstream competitors.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Chaminda Anuruddha is positioning himself as a fresh alternative to the mainstream candidates, appealing to voters who are dissatisfied with traditional political structures.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information about his personal and family life is not widely available.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Chaminda Anuruddha is often associated with symbols of resilience, such as his campaign's Horseshoe symbol, which may represent luck and strength.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> Chaminda's independent status suggests that his campaign is less focused on branding through colors and more on his symbol and message.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

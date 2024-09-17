@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuwan Bopage - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Nuwan Bopage</h1>
+        <p>Human Rights Activist and Presidential Candidate</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Dynamic Image" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/Nuwan Bopage.jpg" alt="Nuwan Bopage" class="candi-img">
+            <img src="img/Symbol/Nuwan Bopage.png" alt="candidate symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> Nuwan Bopage</li>
+                <li><strong>Date of Birth:</strong> Information not publicly available</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Religion:</strong> Information not publicly available</li>
+                <li><strong>Ethnicity:</strong> Information not publicly available</li>
+                <li><strong>Education:</strong> Attorney-at-Law</li>
+                <li><strong>Profession:</strong> Lawyer, Human Rights Activist</li>
+                <li><strong>Political Status:</strong> Presidential Candidate, People's Struggle Alliance (PSA)</li>
+                <li><strong>Residency:</strong> Information not publicly available</li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> Nuwan Bopage is a key figure in the 2022 "Aragalaya" movement, actively involved in defending protestors' rights and challenging the government's policies. He is running as the candidate of the People's Struggle Alliance (PSA), a coalition formed from the grassroots movement.</li>
+                <li><strong>Political Platform:</strong> His platform opposes neoliberal economic policies, advocates for systemic change, and promotes direct democracy. He also focuses on human rights and justice, particularly for marginalized communities.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Focus Areas</h2>
+            <ul>
+                <li><strong>Opposition to IMF Policies:</strong> Bopage advocates for rejecting the current IMF agreement and emphasizes people-centered economic policies that prioritize equality and development.</li>
+                <li><strong>Systemic Change:</strong> He promotes a political system that ensures equality and justice, moving beyond traditional neoliberal models.</li>
+                <li><strong>Direct Democracy:</strong> A key tenet of Bopage’s platform, he supports a system where citizens are directly involved in political decision-making.</li>
+                <li><strong>Human Rights and Justice:</strong> As a lawyer and activist, Bopage prioritizes the protection of civil liberties and advocates for reforming repressive laws such as the Prevention of Terrorism Act (PTA).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Achievements</h2>
+            <ul>
+                <li><strong>Legal Defense:</strong> Nuwan Bopage gained recognition for defending protestors and activists during the 2022 Aragalaya movement. He has been a staunch advocate for human rights in legal and political forums.</li>
+                <li><strong>Grassroots Activism:</strong> His involvement in the People's Struggle Alliance (PSA) has positioned him as a leader for those seeking transformative change in Sri Lanka's political system.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Challenges & Criticisms</h2>
+            <ul>
+                <li><strong>Campaign Challenges:</strong> Running as a candidate from a relatively new political alliance, Bopage faces significant challenges in competing against candidates with more established political bases and resources.</li>
+                <li><strong>Opposition to Mainstream Policies:</strong> His opposition to IMF policies and neoliberal economics may draw criticism from those aligned with more traditional, market-driven approaches to governance.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Nuwan Bopage presents a progressive and leftist alternative to mainstream candidates, appealing to voters who support systemic reform and human rights activism.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal & Family Life</h2>
+            <ul>
+                <li><strong>Family:</strong> Information about his personal and family life is not widely available.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual and Symbolic Representation</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Known for his strong stance on human rights and justice, Bopage’s campaign symbol is the Umbrella, symbolizing protection and shelter, especially for marginalized groups.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color and Branding</h2>
+            <ul>
+                <li><strong>Campaign Colors:</strong> Nuwan Bopage’s symbol is the Umbrella, which conveys a message of protection, aligning with his advocacy for safeguarding human rights and promoting equality.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

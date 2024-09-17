@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.W.S.K. Bandaranayake - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>P.W.S.K. Bandaranayake</h1>
+        <p>Presidential Candidate, Jathika Sanwardhana Peramuna</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Sri Lanka" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/P. W. S. K. Bandaranayake.jpeg" alt="P.W.S.K. Bandaranayake" class="candi-img">
+            <img src="img/Symbol/P. W. S. K. Bandaranayake.png" alt="Coconut Symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> P.W.S.K. Bandaranayake</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Political Party:</strong> Jathika Sanwardhana Peramuna (National Development Party)</li>
+                <li><strong>Political Symbol:</strong> Coconut</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Political Background and Career</h2>
+            <ul>
+                <li><strong>Political Involvement:</strong> P.W.S.K. Bandaranayake is a candidate in the 2024 Sri Lankan Presidential Election, representing the Jathika Sanwardhana Peramuna. His political focus includes national development and economic improvement, particularly in infrastructure and the agricultural sector.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Policies and Promises</h2>
+            <ul>
+                <li><strong>National Infrastructure Development:</strong> Advocates for infrastructure growth to improve the standard of living, especially in rural areas.</li>
+                <li><strong>Agricultural Reform:</strong> Proposes modernizing agricultural systems, focusing on efficient water management and sustainable practices.</li>
+                <li><strong>Government Transparency:</strong> Aims to increase transparency and reduce corruption to bolster economic growth.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Election Strategy</h2>
+            <ul>
+                <li><strong>Focus on Rural Vote:</strong> Bandaranayake’s strategy involves appealing to farmers and working-class citizens, promoting a grassroots approach to national development.</li>
+                <li><strong>Campaign Message:</strong> Offers a fresh perspective on governance, aiming to provide an alternative to the traditional political elite.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Key Challenges</h2>
+            <ul>
+                <li><strong>Competing Against Established Figures:</strong> Faces an uphill battle against well-known political figures, but aims to resonate with voters seeking change.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Represents a break from traditional politics, focusing on stability and resilience through sustainable development and governance.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Public Image and Symbolism</h2>
+            <ul>
+                <li><strong>Symbol:</strong> The Coconut symbol signifies stability and resilience, reflecting his policy focus on sustainable development and governance.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

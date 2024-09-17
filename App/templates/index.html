@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        #chat-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            height: 80vh;
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        #chat-box {
+            flex: 1;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            max-width: 100%;
+            position: relative;
+        }
+        .message.user {
+            align-items: flex-end;
+        }
+        .message.assistant {
+            align-items: flex-start;
+        }
+        .message .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            flex-shrink: 0;
+        }
+        .message.user .profile {
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+        .message.assistant .profile {
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+        .message .message-bubble {
+            border-radius: 20px;
+            padding: 15px;
+            max-width: 100%;
+            word-wrap: break-word;
+            position: relative;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .message.user .message-bubble {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 20px;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+        .message.assistant .message-bubble {
+            background-color: #e5e5ea;
+            color: #333;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-right: 10px;
+            margin-left: 0;
+        }
+        #input-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #000000;
+            position: relative;
+        }
+        #message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 16px;
+            outline: none;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); /* Adding inner shadow for depth */
+            position: relative;
+            margin-right: 80px; /* Leave space for the button */
+        }
+        #send-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #send-button:hover {
+            background-color: #0056b3;
+        }
+        .formatted-response {
+            white-space: pre-wrap;
+            margin: 0; /* Remove any default margin */
+        }
+        .list-item {
+            margin-bottom: 10px;
+        }
+        .list-item:before {
+            content: '• ';
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="input-container">
+            <input id="message-input" type="text" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('send-button').addEventListener('click', () => {
+            const messageInput = document.getElementById('message-input');
+            const userMessage = messageInput.value.trim();
+            if (userMessage === '') return;
+    
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `
+                <div class="message user">
+                    <div class="message-bubble">${userMessage}</div>
+                </div>`;
+            messageInput.value = '';
+    
+            fetch('/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let formattedResponse = data.response
+                    .trim()                             // Trim leading/trailing white space
+                    .replace(/\s\s+/g, ' ')             // Replace multiple spaces with a single space
+                    .replace(/^\s+|\s+$/g, '');         // Remove any leading or trailing spaces entirely
+    
+                // Apply formatting for lists or other structured content
+                formattedResponse = formattedResponse
+                    .replace(/\n(\d+\.\s.+)/g, '<br><br><div class="list-item">$1</div>')  // Format numbered list items
+                    .replace(/(\d+\.\s.+?)(?=\n\d+\.\s|\n|$)/g, '<div class="list-item">$1</div>');
+    
+                chatBox.innerHTML += `
+                    <div class="message assistant">
+                        <div class="message-bubble formatted-response">${formattedResponse}</div>
+                    </div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        });
+    
+        // Optional: Handle "Enter" key for sending messages
+        document.getElementById('message-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('send-button').click();
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. M. Bandaranaike - Profile</title>
+    
+    <link rel="stylesheet" href="Style/styles.css">
+    <link rel="stylesheet" href="Style/flash.css">
+
+    <style>
+        /* Add any additional CSS styles here */
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>D. M. Bandaranaike</h1>
+        <p>Independent Presidential Candidate</p>
+    </header>
+
+    <div class="image-container">
+        <img src="img/srilanka.jpg" alt="Sri Lanka" class="dynamic-image" id="dynamicImage">
+    </div>
+    
+    <div class="content">
+        <section>
+            <h2>Personal Information</h2>
+            <img src="img/Candidate image/D. M. Bandaranaike.jpg" alt="D. M. Bandaranaike" class="candi-img">
+            <img src="img/Symbol/D.M.Bandaranayeke.png" alt="Table Fan Symbol" class="candi-img">
+            <ul>
+                <li><strong>Full Name:</strong> D. M. Bandaranaike</li>
+                <li><strong>Nationality:</strong> Sri Lankan</li>
+                <li><strong>Political Status:</strong> Independent Candidate</li>
+                <li><strong>Political Symbol:</strong> Table Fan</li>
+                </ul>
+        </section>
+
+        <section>
+            <h2>Background</h2>
+            <ul>
+                <li><strong>Background:</strong> D. M. Bandaranaike is an independent candidate running for the 2024 Sri Lankan presidential election. His candidacy represents an alternative to the dominant political forces, appealing to voters seeking change outside the major parties.</li>
+                <li><strong>Political Experience:</strong> Limited information is available about his past political career, suggesting he may be a newcomer to national-level politics or focused on regional issues.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Political Campaign and Promises</h2>
+            <ul>
+                <li><strong>Economic Development:</strong> Likely to focus on addressing regional inequalities and promoting sustainable growth.</li>
+                <li><strong>Good Governance:</strong> Advocates for transparency and accountability in the public sector.</li>
+                <li><strong>Social Justice:</strong> Tackles issues related to marginalized communities and social inequality.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Election Symbol</h2>
+            <ul>
+                <li><strong>Symbol:</strong> The Table Fan symbol signifies relief and comfort, suggesting his campaign aims to provide a refreshing alternative to the current political climate.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Challenges and Opportunities</h2>
+            <ul>
+                <li><strong>Visibility:</strong> Faces challenges in gaining national attention and media coverage as an independent candidate.</li>
+                <li><strong>Campaign Infrastructure:</strong> Lacks the backing of a major party, making it harder to build a widespread, well-funded campaign.</li>
+                <li><strong>Appeal:</strong> May attract disillusioned voters seeking an alternative to traditional political parties.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2024 Political Prospects</h2>
+            <ul>
+                <li><strong>Position in 2024 Elections:</strong> Highlights the diversity of choices in the presidential race, offering an alternative to mainstream politics.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal and Political Vision</h2>
+            <ul>
+                <li><strong>Personal Background:</strong> Limited personal information is available, suggesting either a newcomer to politics or a low-profile public figure.</li>
+                <li><strong>Political Vision:</strong> Expected to become clearer as the campaign progresses.</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Team Scorpion | Designed for Informational Purposes</p>
+    </footer>
+
+    <!-- Chat Button and Popup -->
+    <button id="chat-button">🦂</button>
+
+    <div id="chat-popup">
+        <span id="close-chat">&times;</span>
+        <!-- Load the chatbot UI in an iframe -->
+        <iframe id="chat-iframe" src="http://127.0.0.1:5000/"></iframe>
+    </div>
+
+    <div id="small-popup">
+        <p>Try our Scorpion AI!</p>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const smallPopup = document.getElementById('small-popup');
+    
+        // Show small popup message on page load
+        window.onload = () => {
+            smallPopup.style.display = 'block'; // Show small popup
+            setTimeout(() => {
+                smallPopup.style.display = 'none'; // Auto-hide after 3 seconds
+            }, 3000);
+    
+            // Stop the button animation after 5 seconds
+            setTimeout(() => {
+                chatButton.style.animation = 'none'; // Disable animation
+            }, 5000);
+        };
+    
+        // Toggle chat popup visibility when the chat button is clicked
+        chatButton.addEventListener('click', () => {
+            if (chatPopup.style.display === 'flex') {
+                chatPopup.style.display = 'none'; // Hide chat popup if it's open
+            } else {
+                chatPopup.style.display = 'flex'; // Show chat popup if it's closed
+            }
+        });
+    
+        // Close the chat popup when the close button (X) is clicked
+        closeChat.addEventListener('click', () => {
+            chatPopup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
